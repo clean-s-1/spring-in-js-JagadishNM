@@ -1,3 +1,6 @@
+const EmailAlert = require("../app/emailalert");
+const LEDAlert = require("../app/ledalert");
+const StatsAlerter = require("../app/statsalerter");
 const getStatistics=require("../app/statistics");
 describe("StatisticsTest",function(){
     it("reportsAverageMinMaxx",function(){
