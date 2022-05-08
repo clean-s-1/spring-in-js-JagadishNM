@@ -22,6 +22,9 @@ describe("StatisticsTest",function(){
         // NAN (not-a-number)
         // Design the expect statement here.
         // Use https://www.w3schools.com/jsref/jsref_isnan.asp
+        expect(true).toEqual(Number.isNaN(stats.average));
+        expect(true).toEqual(Number.isNaN(stats.max));
+        expect(true).toEqual(Number.isNaN(stats.min));
         
     })
     it("raises alerts when max is greater than threshold",function(){
