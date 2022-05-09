@@ -1,3 +1,6 @@
+const EmailAlert = require("../app/emailalert");
+const LEDAlert = require("../app/ledalert");
+const StatsAlerter = require("../app/statsalerter");
 const getStatistics=require("../app/statistics");
 describe("StatisticsTest",function(){
     it("reportsAverageMinMaxx",function(){
@@ -22,6 +25,9 @@ describe("StatisticsTest",function(){
         // NAN (not-a-number)
         // Design the expect statement here.
         // Use https://www.w3schools.com/jsref/jsref_isnan.asp
+        expect(true).toEqual(Number.isNaN(stats.average));
+        expect(true).toEqual(Number.isNaN(stats.max));
+        expect(true).toEqual(Number.isNaN(stats.min));
         
     })
     it("raises alerts when max is greater than threshold",function(){
@@ -34,8 +40,8 @@ describe("StatisticsTest",function(){
          const statsAlerter=new StatsAlerter(maxThreshold, alerters);
          statsAlerter.checkAndAlert([99.8, 34.2, 4.5, 6.7]);
      
-         expect(emailAlert.emailSent).tobe(true);
-         expect(ledAlert.ledGlows).tobe(true);
+         expect(emailAlert.emailSent).toBe(true);
+         expect(ledAlert.ledGlows).toBe(true);
 
         
         
